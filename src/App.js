@@ -8,8 +8,6 @@ import LoadingBar from "react-top-loading-bar";
 
 const App = () => {
   const pageSize = 6;
-  const apiKey = "f25d2258e66d4a788992cf6b8d7fc495";
-
   const [progress, setProgress] = useState(0);
   return (
     <div>
@@ -22,7 +20,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="general"
                 pageSize={pageSize}
                 country="in"
@@ -35,7 +32,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="business"
                 pageSize={pageSize}
                 country="in"
@@ -48,7 +44,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="entertainment"
                 pageSize={pageSize}
                 country="in"
@@ -61,7 +56,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="general"
                 pageSize={pageSize}
                 country="in"
@@ -74,7 +68,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="health"
                 pageSize={pageSize}
                 country="in"
@@ -87,7 +80,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="science"
                 pageSize={pageSize}
                 country="in"
@@ -100,7 +92,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="sports"
                 pageSize={pageSize}
                 country="in"
@@ -113,7 +104,6 @@ const App = () => {
             element={
               <News
                 setProgress={setProgress}
-                apiKey={apiKey}
                 key="technology"
                 pageSize={pageSize}
                 country="in"

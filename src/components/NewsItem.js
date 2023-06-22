@@ -1,15 +1,6 @@
 import React from "react";
 
-const NewsItem = ({
-  title,
-  imageUrl,
-  newsUrl,
-  author,
-  date,
-  source,
-  theme,
-  toggleTheme,
-}) => {
+const NewsItem = (props) => {
   return (
     <div className="my-3">
       <div className="card">
@@ -21,39 +12,43 @@ const NewsItem = ({
             right: "0",
           }}
         >
-          <span className="badge rounded-pill bg-danger">{source}</span>
+          <span className="badge rounded-pill bg-danger">{props.source}</span>
         </div>
         <img
           src={
-            !imageUrl
+            !props.imageUrl
               ? "https://shenandoahcountyva.us/bos/wp-content/uploads/sites/4/2018/01/picture-not-available-clipart-12.jpg"
-              : imageUrl
+              : props.imageUrl
           }
           width="400"
           height="300"
           className="card-img-top"
           alt="..."
         />
-        <div className={`card-body bg-${theme}`}>
+        <div className={`card-body bg-${props.theme}`}>
           <h5
             className={`card-title text-${
-              theme === "light" ? "black" : "white"
+              props.theme === "light" ? "black" : "white"
             }`}
           >
-            {title}...
+            {props.title}...
           </h5>
           {/* <p className="card-text">{description}...</p> */}
           <p className="card-text">
-            <small className={`text-${theme === "light" ? "black" : "white"}`}>
-              By {!author ? "Unknown" : author} on{" "}
-              {new Date(date).toGMTString()}
+            <small
+              className={`text-${props.theme === "light" ? "black" : "white"}`}
+            >
+              By {!props.author ? "Unknown" : props.author} on{" "}
+              {new Date(props.date).toGMTString()}
             </small>
           </p>
           <button
-            href={newsUrl}
+            href={props.newsUrl}
             target="_blank"
             rel="noreferrer"
-            className={`btn btn-sm btn-${theme === "light" ? "dark" : "light"}`}
+            className={`btn btn-sm btn-${
+              props.theme === "light" ? "dark" : "light"
+            }`}
           >
             Read More
           </button>

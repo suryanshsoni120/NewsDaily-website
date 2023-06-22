@@ -1,16 +1,13 @@
 import React from "react";
-// import spinner from "./spinner.gif";
 
-const Spinner = ({ theme }) => {
+const Spinner = (props) => {
   return (
     <div
       className={`d-flex justify-content-center text-${
-        theme === "light" ? "dark" : "light"
+        props.theme === "light" ? "dark" : "light"
       }`}
     >
-      <div className="spinner-border" role="status">
-        {/* <span class="sr-only">Loading...</span> */}
-      </div>
+      <div className="spinner-border" role="status"></div>
     </div>
   );
 };

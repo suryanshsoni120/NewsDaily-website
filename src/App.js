@@ -10,6 +10,7 @@ const App = () => {
   const pageSize = 6;
   const [progress, setProgress] = useState(0);
   const [theme, setTheme] = useState("light");
+  const apiKey = process.env.REACT_APP_NEWS_API;
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -39,6 +40,7 @@ const App = () => {
                 category="general"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -53,6 +55,7 @@ const App = () => {
                 category="business"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -67,6 +70,7 @@ const App = () => {
                 category="entertainment"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -81,6 +85,7 @@ const App = () => {
                 category="general"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -95,6 +100,7 @@ const App = () => {
                 category="health"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -109,6 +115,7 @@ const App = () => {
                 category="science"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -123,6 +130,7 @@ const App = () => {
                 category="sports"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>
@@ -137,6 +145,7 @@ const App = () => {
                 category="technology"
                 toggleTheme={toggleTheme}
                 theme={theme}
+                apiKey={apiKey}
               />
             }
           ></Route>

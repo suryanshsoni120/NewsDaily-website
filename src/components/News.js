@@ -18,7 +18,7 @@ const News = (props) => {
 
   const updateNews = async () => {
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=f25d2258e66d4a788992cf6b8d7fc495&page=${page}&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
@@ -33,13 +33,12 @@ const News = (props) => {
   useEffect(() => {
     document.title = `${capitalizeFirstLetter(props.category)} - NewsDaily`;
     updateNews();
-    // eslint-disable-next-line
   }, []);
 
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
-    }&category=${props.category}&apiKey=f25d2258e66d4a788992cf6b8d7fc495&page=${
+    }&category=${props.category}&apiKey=${props.apiKey}&page=${
       page + 1
     }&pageSize=${props.pageSize}`;
     setPage(page + 1);
@@ -71,11 +70,6 @@ const News = (props) => {
                 <div className="col-md-4" key={element.url}>
                   <NewsItem
                     title={element.title ? element.title.slice(0, 70) : ""}
-                    // description={
-                    //   element.description
-                    //     ? element.description.slice(0, 88)
-                    //     : ""
-                    // }
                     imageUrl={element.urlToImage}
                     newsUrl={element.url}
                     author={element.author}

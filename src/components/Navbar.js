@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = (props) => {
   return (
     <div>
       <nav
-        className={`navbar fixed-top navbar-expand-lg navbar-dark bg-${theme}`}
+        className={`navbar fixed-top navbar-expand-lg navbar-dark bg-${props.theme}`}
       >
         <div className="container-fluid">
           <Link
             className={`navbar-brand text-${
-              theme === "light" ? "black" : "white"
+              props.theme === "light" ? "black" : "white"
             }`}
             to="/"
           >
@@ -32,7 +32,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   aria-current="page"
                   to="/"
@@ -43,7 +43,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/business"
                 >
@@ -53,7 +53,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/entertainment"
                 >
@@ -63,7 +63,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/general"
                 >
@@ -73,7 +73,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/health"
                 >
@@ -83,7 +83,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/science"
                 >
@@ -93,7 +93,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/sports"
                 >
@@ -103,7 +103,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li className="nav-item">
                 <Link
                   className={`nav-link active text-${
-                    theme === "light" ? "black" : "white"
+                    props.theme === "light" ? "black" : "white"
                   }`}
                   to="/technology"
                 >
@@ -111,17 +111,6 @@ const Navbar = ({ theme, toggleTheme }) => {
                 </Link>
               </li>
             </ul>
-            {/* <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form> */}
           </div>
         </div>
         <div className="form-check form-switch">
@@ -129,17 +118,17 @@ const Navbar = ({ theme, toggleTheme }) => {
             className="form-check-input"
             style={{ cursor: "pointer" }}
             type="checkbox"
-            onClick={toggleTheme}
+            onClick={props.toggleTheme}
             role="switch"
             id="flexSwitchCheckDefault"
           />
           <label
             className={`form-check-label me-5 text-${
-              theme === "light" ? "black" : "white"
+              props.theme === "light" ? "black" : "white"
             }`}
             htmlFor="flexSwitchCheckDefault"
           >
-            {theme === "light" ? "Light" : "Dark"}
+            {props.theme === "light" ? "Light" : "Dark"}
           </label>
         </div>
       </nav>

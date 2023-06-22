@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className={`navbar fixed-top navbar-expand-lg navbar-dark bg-${theme}`}
+      >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link
+            className={`navbar-brand text-${
+              theme === "light" ? "black" : "white"
+            }`}
+            to="/"
+          >
             NewsDaily
           </Link>
           <button
@@ -23,42 +30,83 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  aria-current="page"
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/business">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/business"
+                >
                   Business
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/entertainment"
+                >
                   Entertainment
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/general">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/general"
+                >
                   General
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/health">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/health"
+                >
                   Health
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/science">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/science"
+                >
                   Science
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/sports">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/sports"
+                >
                   Sports
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/technology">
+                <Link
+                  className={`nav-link active text-${
+                    theme === "light" ? "black" : "white"
+                  }`}
+                  to="/technology"
+                >
                   Technology
                 </Link>
               </li>
@@ -75,6 +123,24 @@ const Navbar = () => {
                 </button>
               </form> */}
           </div>
+        </div>
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            style={{ cursor: "pointer" }}
+            type="checkbox"
+            onClick={toggleTheme}
+            role="switch"
+            id="flexSwitchCheckDefault"
+          />
+          <label
+            className={`form-check-label me-5 text-${
+              theme === "light" ? "black" : "white"
+            }`}
+            htmlFor="flexSwitchCheckDefault"
+          >
+            {theme === "light" ? "Light" : "Dark"}
+          </label>
         </div>
       </nav>
     </div>

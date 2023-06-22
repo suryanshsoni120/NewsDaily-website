@@ -1,10 +1,16 @@
 import React from "react";
-import spinner from "./spinner.gif";
+// import spinner from "./spinner.gif";
 
-const Spinner = () => {
+const Spinner = ({ theme }) => {
   return (
-    <div className="text-center">
-      <img src={spinner} alt="Loading..." />
+    <div
+      className={`d-flex justify-content-center text-${
+        theme === "light" ? "dark" : "light"
+      }`}
+    >
+      <div className="spinner-border" role="status">
+        {/* <span class="sr-only">Loading...</span> */}
+      </div>
     </div>
   );
 };

@@ -1,7 +1,15 @@
 import React from "react";
 
-const NewsItem = (props) => {
-  let { title, imageUrl, newsUrl, author, date, source } = props;
+const NewsItem = ({
+  title,
+  imageUrl,
+  newsUrl,
+  author,
+  date,
+  source,
+  theme,
+  toggleTheme,
+}) => {
   return (
     <div className="my-3">
       <div className="card">
@@ -26,23 +34,29 @@ const NewsItem = (props) => {
           className="card-img-top"
           alt="..."
         />
-        <div className="card-body">
-          <h5 className="card-title">{title}...</h5>
+        <div className={`card-body bg-${theme}`}>
+          <h5
+            className={`card-title text-${
+              theme === "light" ? "black" : "white"
+            }`}
+          >
+            {title}...
+          </h5>
           {/* <p className="card-text">{description}...</p> */}
           <p className="card-text">
-            <small className="text-muted">
+            <small className={`text-${theme === "light" ? "black" : "white"}`}>
               By {!author ? "Unknown" : author} on{" "}
               {new Date(date).toGMTString()}
             </small>
           </p>
-          <a
+          <button
             href={newsUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn btn-sm btn-dark"
+            className={`btn btn-sm btn-${theme === "light" ? "dark" : "light"}`}
           >
             Read More
-          </a>
+          </button>
         </div>
       </div>
     </div>

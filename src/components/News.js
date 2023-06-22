@@ -57,12 +57,12 @@ const News = (props) => {
       >
         NewsDaily - Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
-      {loading && <Spinner />}
+      {loading && <Spinner theme={props.theme} />}
       <InfiniteScroll
         dataLength={articles.length}
         next={fetchMoreData}
         hasMore={articles.length !== totalResults}
-        loader={<Spinner />}
+        loader={<Spinner theme={props.theme} />}
       >
         <div className="container">
           <div className="row">
@@ -81,6 +81,8 @@ const News = (props) => {
                     author={element.author}
                     date={element.publishedAt}
                     source={element.source.name}
+                    theme={props.theme}
+                    toggleTheme={props.toggleTheme}
                   />
                 </div>
               );

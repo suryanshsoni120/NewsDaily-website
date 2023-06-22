@@ -9,10 +9,23 @@ import LoadingBar from "react-top-loading-bar";
 const App = () => {
   const pageSize = 6;
   const [progress, setProgress] = useState(0);
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+      document.body.style.backgroundColor = "#1a1a1a";
+      document.body.style.color = "white";
+    } else {
+      setTheme("light");
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+  };
   return (
     <div>
       <Router>
-        <Navbar />
+        <Navbar toggleTheme={toggleTheme} theme={theme} />
         <LoadingBar height={3} color="#f11946" progress={progress} />
         <Routes>
           <Route
@@ -24,6 +37,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="general"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -36,6 +51,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="business"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -48,6 +65,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="entertainment"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -60,6 +79,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="general"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -72,6 +93,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="health"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -84,6 +107,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="science"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -96,6 +121,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="sports"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
@@ -108,6 +135,8 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="technology"
+                toggleTheme={toggleTheme}
+                theme={theme}
               />
             }
           ></Route>
